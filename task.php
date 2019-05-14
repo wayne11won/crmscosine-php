@@ -68,30 +68,20 @@
 			    <div class="container main-menu">
 			    	<div class="row align-items-center justify-content-between d-flex">
 				      <div id="logo">
-						 <a href="main"><img src="img/logo.png" alt="" title="" /></a>
+						 <a href="task"><img src="img/logo.png" alt="" title="" /></a>
 				      </div>
 				      <nav id="nav-menu-container">
 				        <ul class="nav-menu">
 				          <li class="menu-has-children"><a href="task">Task</a>
 						  	<ul>
 							
-								<li><a href="Addtask">New Task</a></li>
 								<li><a href="closed">Closed Task</a></li>
 							</ul>
-							<li class="menu-has-children"><a href="endorse">Consumers Needs</a>
 				          <li class="menu-has-children"><a href="contact">Contact</a>
-						  	<ul>
-							
-								<li><a href="AddContact">New Contact</a></li>
-							</ul>
-						  <li class="menu-has-children"><a href="product">Product</a>
-							<ul>
-							
-								<li><a href="Addproduct">New Product</a></li>
-							</ul>	
+
+	
 						  <li class="menu-has-children"><a href="profile">Profile</a>
 							<ul>
-								<li><a href="Adduser">New User</a>
 								<li><a href="editemail">Change Email</a>
 								
 								<li><a href="changepassword">Change Password</a></li>
@@ -125,12 +115,13 @@
 							<div class="table100">
 							<?php
 							
+							$roles = $_SESSION["id"];
 							
 							$query = "SELECT a.PID,a.Quantity,a.Product,a.Subprice,a.Total,b.Company,CONCAT(c.Name_Last, ',', c.Name_First) AS Salesperson, a.Notes,a.Status, DATE_FORMAT(Date_Open,'%M %d %Y')  as DATE_OPEN
 							FROM tbltask AS a 
 							left join tblcontact AS b ON a.contact_id=b.id 
 							left join tblusers AS c ON a.sales_rep_id=c.id
-							where a.status = 'PENDING'";
+							where a.status = 'PENDING' AND a.sales_rep_id='$roles'";
 							
 							$result = $db->query($query);
 							//$arraycount= mysqli_fetch_array($result,MYSQLI_ASSOC);
@@ -178,6 +169,7 @@
 								else
 								{
 									echo "<tr><td colspan='" . ($i+1) . "'>No Results found!</td></tr>";
+
 								}
 								echo "</table>";
 

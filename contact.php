@@ -69,30 +69,20 @@
 			    <div class="container main-menu">
 			    	<div class="row align-items-center justify-content-between d-flex">
 				      <div id="logo">
-						 <a href="main"><img src="img/logo.png" alt="" title="" /></a>
+						 <a href="task"><img src="img/logo.png" alt="" title="" /></a>
 				      </div>
 				      <nav id="nav-menu-container">
 				        <ul class="nav-menu">
 				          <li class="menu-has-children"><a href="task">Task</a>
 						  	<ul>
 							
-								<li><a href="Addtask">New Task</a></li>
 								<li><a href="closed">Closed Task</a></li>
 							</ul>
-							<li class="menu-has-children"><a href="endorse">Consumers Needs</a>
 				          <li class="menu-has-children"><a href="contact">Contact</a>
-						  	<ul>
-							
-								<li><a href="AddContact">New Contact</a></li>
-							</ul>
-						  <li class="menu-has-children"><a href="product">Product</a>
-							<ul>
-							
-								<li><a href="Addproduct">New Product</a></li>
-							</ul>	
+
+	
 						  <li class="menu-has-children"><a href="profile">Profile</a>
 							<ul>
-								<li><a href="Adduser">New User</a>
 								<li><a href="editemail">Change Email</a>
 								
 								<li><a href="changepassword">Change Password</a></li>
@@ -187,7 +177,6 @@
 							?>
 						</div>
 					</div>
-					
 						<form class="form-inline" method="post" action="pdf_contact" target="_blank">
 						<button type="submit" id="pdf" name="generate_pdf" class="genric-btn primary circle mt-30"><i class="fa fa-pdf"" aria-hidden="true"></i>
 						Generate PDF</button>

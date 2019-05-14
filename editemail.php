@@ -110,26 +110,12 @@
 				        <ul class="nav-menu">
 				          <li class="menu-has-children"><a href="task">Task</a>
 						  	<ul>
-							
-								<li><a href="Addtask">New Task</a></li>
 								<li><a href="closed">Closed Task</a></li>
 							</ul>
-							<li class="menu-has-children"><a href="endorse">Consumers Needs</a>
 				          <li class="menu-has-children"><a href="contact">Contact</a>
-						  	<ul>
-							
-								<li><a href="AddContact">New Contact</a></li>
-							</ul>
-						  <li class="menu-has-children"><a href="product">Product</a>
-							<ul>
-							
-								<li><a href="Addproduct">New Product</a></li>
-							</ul>	
 						  <li class="menu-has-children"><a href="profile">Profile</a>
 							<ul>
-								<li><a href="Adduser">New User</a>
 								<li><a href="editemail">Change Email</a>
-								
 								<li><a href="changepassword">Change Password</a></li>
 							</ul>
 						

@@ -54,12 +54,12 @@ class PDF extends FPDF
 //$db = new dbObj();
 //$connString =  $db->getConnstring();
 //$display_heading = array('id'=>'ID', 'employee_name'=> 'Name', 'employee_age'=> 'Age','employee_salary'=> 'Salary',);
- 
+ $roles = $_SESSION["id"];
 $result = mysqli_query($db, "SELECT a.PID,a.Quantity,a.Product,a.Total,b.Company,CONCAT(c.Name_Last, ',', c.Name_First) AS Salesperson,a.Status, DATE_FORMAT(Date_Open,'%M %d %Y')  as DATE_OPEN
 							FROM tbltask AS a 
 							left join tblcontact AS b ON a.contact_id=b.id 
 							left join tblusers AS c ON a.sales_rep_id=c.id
-							where a.status = 'CLOSED'") or die("database error:". mysqli_error($db));
+							where a.status = 'CLOSED' AND a.sales_rep_id='$roles'") or die("database error:". mysqli_error($db));
 //$header = mysqli_query($connString, "SHOW columns FROM employee");
 $w=35;
 
